@@ -31,10 +31,6 @@ postR.get("/", async (req, res) => {
   }
 });
 
-postR.get("/top", async (req, res) => {
-  const post = await PostModel.find({ $max: "no_if_comments" });
-  res.send(post);
-});
 
 postR.post("/create", async (req, res) => {
   const payload = req.body;
